@@ -3,8 +3,7 @@
 
 Welcome to the **Azure IoT** project! This repository is a simple entry level project that demonstrates an end-to-end flow, starting from **device provisioning** all the way to data visualization and real-time monitoring through Azure services like **IoT Hub**, **Stream Analytics**, **Power BI**, and more.
 
-<img width="2036" alt="architecture_diagram" src="https://github.com/user-attachments/assets/63019575-223d-471e-896f-6c8310a905b9">
-
+<img width="2036" alt="Group 5" src="https://github.com/user-attachments/assets/2a135db8-a454-4154-baf0-006c9c3d6b6b">
 
 ## 🔄 Data Flow
 
