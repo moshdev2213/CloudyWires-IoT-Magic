@@ -6,18 +6,23 @@ Welcome to the **Azure IoT** project! This repository is a simple entry level pr
 <img width="2036" alt="architecture_diagram" src="https://github.com/user-attachments/assets/63019575-223d-471e-896f-6c8310a905b9">
 
 
-## 📑 Table of Contents
+## 🔄 Data Flow
 
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Key Components](#key-components)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Provisioning Devices](#provisioning-devices)
-- [Data Flow](#data-flow)
-- [Contributing](#contributing)
-- [License](#license)
+The data flow starts from the **simulated device**, where telemetry is sent to the **IoT Hub**. Depending on the data path:
+
+1. **Hot Path**: Data is processed by **Stream Analytics** and output to **Power BI** for real-time visualization.
+2. **Cold Path**: Data is stored in **Azure Storage**, processed by **Databricks**, and analyzed in **Cosmos DB** for advanced insights.
+
+```mermaid
+flowchart TD
+    A[Simulated Device] --> B[Device Provisioning]
+    B --> C[IoT Hub]
+    C --> D[Stream Analytics]
+    C --> E[Azure Data Storage]
+    D --> F[Power BI]
+    E --> G[Databricks]
+    G --> H[Cosmos DB]
+```
 
 ## 🌍 Overview
 
@@ -26,11 +31,11 @@ This project showcases how to securely connect IoT devices to the cloud using **
 ### 📊 Hot Path: 
 
 Below Shows some realtime charts and graphs generated via the power BI platform
+- Real-time data processed by **Stream Analytics** and displayed on **Power BI** dashboards.
 
 ![analytics](https://github.com/user-attachments/assets/7a8d1b59-0dc5-4034-bf69-6809b933c2c7)
 
 
-- Real-time data processed by **Stream Analytics** and displayed on **Power BI** dashboards.
 
 ### 🧊 Cold Path:
 - Data stored in **Azure Data Storage**, processed in **Databricks**, and transformed for deeper insights using **Cosmos DB**.
@@ -41,8 +46,6 @@ Below Shows some realtime charts and graphs generated via the power BI platform
 Simulated Device → Device Provisioning → IoT Hub → Stream Analytics (hot path) → Power BI (real-time dashboard)
                                       ↘ Azure Data Storage (cold path) → Databricks → Cosmos DB (analysis and transformation)
 ```
-
-![Azure IoT Architecture](./path_to_your_image.png)
 
 ## 🛠️ Key Components
 
@@ -208,24 +211,6 @@ By following these steps, you'll have set up the necessary Azure services for yo
   ```bash
   az iot hub device-identity create --device-id MySimulatedDevice --hub-name IoTHubDemo
   ```
-
-## 🔄 Data Flow
-
-The data flow starts from the **simulated device**, where telemetry is sent to the **IoT Hub**. Depending on the data path:
-
-1. **Hot Path**: Data is processed by **Stream Analytics** and output to **Power BI** for real-time visualization.
-2. **Cold Path**: Data is stored in **Azure Storage**, processed by **Databricks**, and analyzed in **Cosmos DB** for advanced insights.
-
-```mermaid
-flowchart TD
-    A[Simulated Device] --> B[Device Provisioning]
-    B --> C[IoT Hub]
-    C --> D[Stream Analytics]
-    C --> E[Azure Data Storage]
-    D --> F[Power BI]
-    E --> G[Databricks]
-    G --> H[Cosmos DB]
-```
 
 ### 💡 Keywords
 - Azure Storage
