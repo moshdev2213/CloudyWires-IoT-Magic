@@ -79,7 +79,7 @@ To get started with this project, follow the steps below to set up your environm
 
 2. **Install dependencies for the simulated device**:
    ```bash
-   cd simulated-device
+   cd device
    npm install
    ```
 
@@ -220,6 +220,6 @@ By following these steps, you'll have set up the necessary Azure services for yo
 - Databricks
 - Power BI
 
-## 🤝 Contributing
+## 🤝 Note
 
 This Project is created in-order to grab the azure IoT workflows and intergrations, feedbacks are kindly accepted with thanks.
