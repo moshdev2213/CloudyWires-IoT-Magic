@@ -74,7 +74,7 @@ To get started with this project, follow the steps below to set up your environm
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/moshdev2213/CloudyWires-IoT-Magic
-   cd azure-iot-project
+   cd CloudyWires-IoT-Magic
    ```
 
 2. **Install dependencies for the simulated device**:
